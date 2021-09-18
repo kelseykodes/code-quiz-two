@@ -1,0 +1,19 @@
+body {
+    font-family: "Lucida Sans Unicode", "Lucida Grande";
+    background-color:silver;
+  }
+
+  h1 {
+    text-decoration: underline;
+  }
+  #question-one {
+    color: slateblue;
+  }
+
+  #question-two {
+    color:rgb(69, 158, 121);
+  }
+
+  #question-three {
+    color:tomato;
+  }
