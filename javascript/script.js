@@ -31,9 +31,21 @@ var timerEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 var timeLeft = 30;
 
-//function startTimer() {
-  //  var timerInterval = setInterval(function() {
-    //    timeLeft--;
-      //  timeLeft.
-    //}
-//}
+function startTimer() {
+    var timerInterval = setInterval(function() {
+        timeLeft--;
+        timerEl.textContent = timeLeft + " seconds remaining";
+
+        if (timeLeft === 0){
+            clearInterval(timerInterval);
+            displayMessage();
+
+        }
+    }, 1000);
+}
+
+function displayMessage() {
+    timerEl.textContent = ('Time is Up!');
+}
+
+startTimer();
