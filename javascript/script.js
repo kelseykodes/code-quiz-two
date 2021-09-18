@@ -1,4 +1,27 @@
 var userScore = 0;
+var timeLeft = 30;
+var timerEl = document.querySelector(".time");
+var mainEl = document.getElementById("main");
+//create endgame function here. Setting it equal to clearInterval(timerInterval)
+function endGame () {
+    var 
+}
+
+function startTimer() {
+    var timerInterval = setInterval(function() {
+        timeLeft--;
+        timerEl.textContent = timeLeft + " seconds remaining";
+
+        if (timeLeft === 0) || (quizQuestions{
+            clearInterval(timerInterval);
+            //call endGame function here
+            endGame();
+            displayMessage();
+
+        }
+    }, 1000);
+}
+startTimer();
 const quizQuestions = [
   {
       prompt: "Select The Correct Braces For An Array:\n(a) [ ]\n\ (b) { }\n(c) ( )",
@@ -18,34 +41,38 @@ for (var i = 0; i < 3; /*quizQuestions.length*/ i++) {
     var userInput = window.prompt (quizQuestions[i].prompt); 
     if (userInput == quizQuestions[i].answer) {
         /*alert user they are correct!*/
-        alert("Awesome answer! You're correct.")
-        userScore++; /*gives user one point*/
+        alert("Awesome answer! You're correct.") 
+        
+        //userScore++; /*gives user one point*/
     } else {
         alert("Wrong. Looks like someone needs to study!");
+        timeLeft = timeLeft - 5;
+        console.log(timeLeft);
+    } if (i = 3){ 
+        //call endgame function here to stop the timer
+        endGame();
     }
-        
-}
-alert ("final score: " + userScore + "/" + quizQuestions.length);
+    
+};
+alert ("final score: " + timeLeft + "/" + quizQuestions.length);
+// alert ("final score: " + userScore + "/" + quizQuestions.length);
 
-var timerEl = document.querySelector(".time");
-var mainEl = document.getElementById("main");
-var timeLeft = 30;
 
-function startTimer() {
-    var timerInterval = setInterval(function() {
-        timeLeft--;
-        timerEl.textContent = timeLeft + " seconds remaining";
+// function startTimer() {
+//     var timerInterval = setInterval(function() {
+//         timeLeft--;
+//         timerEl.textContent = timeLeft + " seconds remaining";
 
-        if (timeLeft === 0){
-            clearInterval(timerInterval);
-            displayMessage();
+//         if (timeLeft === 0){
+//             clearInterval(timerInterval);
+//             displayMessage();
 
-        }
-    }, 1000);
-}
+//         }
+//     }, 1000);
+// }
 
 function displayMessage() {
-    timerEl.textContent = ('Time is Up!');
+    timerEl.textContent = ('');
 }
 
 startTimer();
