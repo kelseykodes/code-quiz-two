@@ -3,8 +3,8 @@ var timeLeft = 30;
 var timerEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 //create endgame function here. Setting it equal to clearInterval(timerInterval)
-function endGame () {
-    var 
+function endGame (){
+
 }
 
 function startTimer() {
@@ -12,7 +12,7 @@ function startTimer() {
         timeLeft--;
         timerEl.textContent = timeLeft + " seconds remaining";
 
-        if (timeLeft === 0) || (quizQuestions{
+        if (timeLeft === 0) {
             clearInterval(timerInterval);
             //call endGame function here
             endGame();
@@ -41,16 +41,16 @@ for (var i = 0; i < 3; /*quizQuestions.length*/ i++) {
     var userInput = window.prompt (quizQuestions[i].prompt); 
     if (userInput == quizQuestions[i].answer) {
         /*alert user they are correct!*/
-        alert("Awesome answer! You're correct.") 
+        alert("Awesome answer! You're correct.")
         
         //userScore++; /*gives user one point*/
+    } else if (i = 3){ 
+        //call endgame function here to stop the timer
+        endGame();
     } else {
         alert("Wrong. Looks like someone needs to study!");
         timeLeft = timeLeft - 5;
         console.log(timeLeft);
-    } if (i = 3){ 
-        //call endgame function here to stop the timer
-        endGame();
     }
     
 };
