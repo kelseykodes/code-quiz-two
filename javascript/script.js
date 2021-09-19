@@ -20,11 +20,19 @@ function startTimer() {
 }
 startTimer();
 
-ptagEl.textContent = "Select the correct the braces for an array"; 
-answerEl[0].textContent = "[ ]";
-answerEl[1].textContent = "( )";
-answerEl[2].textContent = "{ }";
+ptagEl.textContent = "The Correct Braces For A JavaScript Array is [ ]"; 
+answerEl[0].textContent = "Ture";
+answerEl[1].textContent = "False";
 
+// changing the text of pTag so second question can display 
+
+ptagEl.textContent = "Can You Use CSS Inside JavaScript?";
+answerEl[0].textContent = "No";
+answerEl[1].textContent = "Yes";
+// changing the text of pTag so third question can display 
+ptagEl.textContent = "Variables Can NOT Be Re-Assigned Multiple Values";
+answerEl[0].textContent = "Ture";
+answerEl[1].textContent = "False";
 
 
 //  const quizQuestions = [   
