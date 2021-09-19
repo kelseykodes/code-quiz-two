@@ -4,38 +4,34 @@ var timerEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 //create endgame function here. Setting it equal to clearInterval(timerInterval)
 function endGame (){
-
 }
 
 function startTimer() {
     var timerInterval = setInterval(function() {
-        timeLeft--;
         timerEl.textContent = timeLeft + " seconds remaining";
-
-        if (timeLeft === 0) {
+        timeLeft--;
+        if (timeLeft <= -1) {
             clearInterval(timerInterval);
-            //call endGame function here
-            endGame();
-            displayMessage();
-
+            displayMessage ();
         }
-    }, 1000);
+    }, 1000);   
 }
 startTimer();
-const quizQuestions = [
-  {
-      prompt: "Select The Correct Braces For An Array:\n(a) [ ]\n\ (b) { }\n(c) ( )",
-      answer: "a"
-  },
-  {
-      prompt: "Can You Style CSS In JavaScript?\n(a) No\n\ (b) Yes",
-      answer: "b"
-  },
-   {
-    prompt: "Variables Can NOT Be Re-Assigned Multiple Values:\n(a) False\n\ (b) True",
-    answer: "a"
-   },
-];
+ const quizQuestions = ["Square Braces Are For An Array?", "Can You Style CSS In JavaScript?", "Variables Can NOT Be Re-Assigned Multiple Values."]
+// const quizQuestions = [
+  //{
+    //   prompt: "Select The Correct Braces For An Array:\n(a) [ ]\n\ (b) { }\n(c) ( )",
+    //   answer: "a"
+//   },
+//   {
+    //   prompt: "Can You Style CSS In JavaScript?\n(a) No\n\ (b) Yes",
+    //   answer: "b"
+//   },
+//    {
+    // prompt: "Variables Can NOT Be Re-Assigned Multiple Values:\n(a) False\n\ (b) True",
+    // answer: "a"
+//    },
+// ];
 
 for (var i = 0; i < 3; /*quizQuestions.length*/ i++) {
     var userInput = window.prompt (quizQuestions[i].prompt); 
@@ -54,7 +50,7 @@ for (var i = 0; i < 3; /*quizQuestions.length*/ i++) {
     }
     
 };
-alert ("final score: " + timeLeft + "/" + quizQuestions.length);
+alert ("final score: " + timeLeft );
 // alert ("final score: " + userScore + "/" + quizQuestions.length);
 
 
