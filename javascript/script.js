@@ -2,6 +2,8 @@ var userScore = 0;
 var timeLeft = 30;
 var timerEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
+var ptagEl = document.getElementById("pTag");
+var answerEl = document.querySelectorAll(".answer");
 //create endgame function here. Setting it equal to clearInterval(timerInterval)
 function endGame (){
 }
@@ -17,11 +19,18 @@ function startTimer() {
     }, 1000);   
 }
 startTimer();
- const quizQuestions = ["Square Braces Are For An Array?", "Can You Style CSS In JavaScript?", "Variables Can NOT Be Re-Assigned Multiple Values."]
-// const quizQuestions = [
-  //{
+
+ptagEl.textContent = "Select the correct the braces for an array"; 
+answerEl[0].textContent = "[ ]";
+answerEl[1].textContent = "( )";
+answerEl[2].textContent = "{ }";
+
+
+
+//  const quizQuestions = [   
+    // {
     //   prompt: "Select The Correct Braces For An Array:\n(a) [ ]\n\ (b) { }\n(c) ( )",
-    //   answer: "a"
+    //    answer: "a"
 //   },
 //   {
     //   prompt: "Can You Style CSS In JavaScript?\n(a) No\n\ (b) Yes",
@@ -33,24 +42,25 @@ startTimer();
 //    },
 // ];
 
-for (var i = 0; i < 3; /*quizQuestions.length*/ i++) {
-    var userInput = window.prompt (quizQuestions[i].prompt); 
-    if (userInput == quizQuestions[i].answer) {
-        /*alert user they are correct!*/
-        alert("Awesome answer! You're correct.")
+// for (var i = 0; i < 3; /*quizQuestions.length*/ i++) {
+    // var userInput = quizQuestions[i].prompt; 
+    // console.log (userInput);
+    // if (userInput == quizQuestions[i].answer) {
+    //     /*alert user they are correct!*/
+    //     alert("Awesome answer! You're correct.")
         
-        //userScore++; /*gives user one point*/
-    } else if (i = 3){ 
-        //call endgame function here to stop the timer
-        endGame();
-    } else {
-        alert("Wrong. Looks like someone needs to study!");
-        timeLeft = timeLeft - 5;
-        console.log(timeLeft);
-    }
+    //     //userScore++; /*gives user one point*/
+    // } else if (i = 3){ 
+    //     //call endgame function here to stop the timer
+    //     endGame();
+    // } else {
+    //     alert("Wrong. Looks like someone needs to study!");
+    //     timeLeft = timeLeft - 5;
+    //     console.log(timeLeft);
+    // }
     
-};
-alert ("final score: " + timeLeft );
+// };
+// alert ("final score: " + timeLeft );
 // alert ("final score: " + userScore + "/" + quizQuestions.length);
 
 
