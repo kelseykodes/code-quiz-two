@@ -2,7 +2,8 @@
 --heliotrope:#9e00fa;
 
 }
-body {
+/* this css style was for the orginal html content that has now been commented out also in the index
+ body {
     font-family: "Lucida Sans Unicode", "Lucida Grande";
   }
 
@@ -19,21 +20,15 @@ body {
 
   #question-three {
     color:tomato;
-  }
+  } */
 
   .container{
-    /*display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 16px;
-    box-shadow: inset 0px 0px 18px var(--heliotrope), 0 0 25px var(--heliotrope);
-  }*/
     display: flex;
     flex-direction: column;
-    text-align:start;
+    text-align: center;
     align-items: center;
     box-shadow: inset 0px 0px 18px var(--heliotrope), 0 0 25px var(--heliotrope);
-    font-size: 2em;
+    font-size: 3em; */
 }
 
 
@@ -49,7 +44,12 @@ body {
     font-size: 1.5em;
   }
 
-  /* .container, #start-button{ trying to center the start button but its not working!
-    /* display: flex; */
-    /* text-align: center; */
-  /* } */
+  #start-button {
+    display: block;
+  }
+
+    /* #start-button { */
+      /* display: flex; */
+     /* align-self:  center;  */
+ /* } */
+
