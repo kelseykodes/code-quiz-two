@@ -27,7 +27,7 @@ This assignment is focused on building a quiz related to JavaScript. It will all
 
 ## Credits
 Collaborator: Reagin Turner, https://github.com/reagintaylor
-leci Reid, https://github.com/Leci1259
+Leci Reid, https://github.com/Leci1259
 
 Followed tutorials: 
 
