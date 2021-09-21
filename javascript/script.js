@@ -1,19 +1,18 @@
 var userScore = 0;
-var timeLeft = 30;
+var timeLeft = 60;
 var timerEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 var ptagEl = document.getElementById("pTag");
 var answerEl = document.querySelectorAll(".answer");
 var startBtn = document.getElementById('start-button')
-var card = document.querySelector(".card")
+var quiz = document.querySelector(".quiz")
 // //create endgame function here. Setting it equal to clearInterval(timerInterval) so if user finishes before timer is up, the timer stops.
 // function endGame (){
 // }
 
 startBtn.addEventListener("click", function(){
     console.log("start button was clicked")
-    card.setAttribute("style", "visibility: visible;");
-
+    quiz.setAttribute("style", "visibility: visible;");
 });
 
 function startTimer() {

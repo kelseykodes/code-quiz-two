@@ -1,3 +1,31 @@
-h1 {
-    color: green;
+:root{
+  --heliotrope:#9e00fa;
+  
   }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    box-shadow: inset 0px 0px 18px var(--heliotrope), 0 0 25px var(--heliotrope);
+    font-size: 3em;
+}
+
+
+  .highscores {
+    background: radial-gradient(circle, rgba(108, 209, 170, 0.986) 0%, rgba(63, 72, 206, 0.604) 100%);
+    border: 5px solid #ffffff;
+    border-radius: 8px;
+    box-shadow: rgba(60, 64, 67, 2) 0 1px 2px 0,
+      rgba(0, 0, 0, 0.15) 0 2px 4px 3px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: inset 0px 0px 18px var(--heliotrope), 0 0 25px hsl(293, 87%, 78%);
+    font-size: 1.5em;
+  }
+ 
+  /* hover isn't working 
+  #back-btn:hover {
+    color: hotpink;
+  } */
