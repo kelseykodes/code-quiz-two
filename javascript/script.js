@@ -27,6 +27,7 @@ function startTimer() {
 }
 startTimer();
 
+
 ptagEl.textContent = "The Correct Braces For A JavaScript Array is [ ]";
 answerEl[0].textContent = "True";
 answerEl[1].textContent = "False";
@@ -61,13 +62,15 @@ function getNextQuestion() {
 
 answerEl[0].addEventListener('click', function() {
     console.log('button one was clicked');
-    // button one will always be correct answer
+    // option 1 will always be correct answer
+    alert("You are correct!");
     getNextQuestion();
 });
 
 answerEl[1].addEventListener("click", function() {
     console.log("button two was clicked")
-    // buttone two will always be incorrect answer
+    // option 2 will always be incorrect answer
+    alert("Wrong. Looks like some needs to study!")
     getNextQuestion();
 });
 
@@ -82,13 +85,15 @@ function getLastQuestion() {
 };
 answerEl[2].addEventListener('click', function() {
     console.log('button one was clicked');
-    // button one will always be correct answer
+    alert("You are correct!");
+    // option 1 one will always be correct answer
     getLastQuestion();
 });
 
 answerEl[3].addEventListener("click", function() {
     console.log("button two was clicked")
-    // buttone two will always be incorrect answer
+    alert("Wrong. Looks like some needs to study!")
+    // option 2 two will always be incorrect answer
     getLastQuestion();
 });
 
@@ -128,8 +133,6 @@ answerEl[3].addEventListener("click", function() {
     //     console.log(timeLeft);
     // }
     
-// };
-// alert ("final score: " + timeLeft );
 // alert ("final score: " + userScore + "/" + quizQuestions.length);
 
 
@@ -148,10 +151,10 @@ answerEl[3].addEventListener("click", function() {
 
 function displayMessage() {
     timerEl.textContent = ('Times Up!');
+    //alert ("final score: " + timeLeft );
 }
 
 startTimer();
-
 
 // the form to store the users to store info 
 // headTitle.textContent = "The quiz is now over!"
