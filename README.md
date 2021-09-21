@@ -1,4 +1,4 @@
-# code-quiz-two
+# Code Quiz
 ## Description
 This assignment is focused on building a quiz related to JavaScript. It will allow user to gauge their level of knowledge of the programming language. After user completes the quiz a form should take user input to store their score. All users who choose to store their score will display in another browser that will store all users information with their name and score.
 
