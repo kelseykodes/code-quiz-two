@@ -9,9 +9,10 @@ var quiz = document.querySelector(".quiz")
 var form = document.querySelector("form")
 var endGame = true;
 // //create endgame function here. Setting it equal to clearInterval(timerInterval) so if user finishes before timer is up, the timer stops.
- function endGame() {
-    form.setAttribute("style", "visibility: visible;");
-    //alert ("final score: " + timeLeft );
+ 
+function endGame() {
+    form.removeAttribute("style=visibility: hidden");
+    //alert ("finalore: " + timeLeft );
     var name = document.querySelector("#fname").value;
     localStorage.setItem('name', name);
     localStorage.setItem('score', timeLeft);
@@ -29,7 +30,7 @@ function startTimer() {
         timeLeft--;
         if (timeLeft <= -1) {
             clearInterval(timerInterval);
-            //endGame ();
+            endGame();
             displayMessage ();
         
         }
