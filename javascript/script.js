@@ -6,13 +6,21 @@ var ptagEl = document.getElementById("pTag");
 var answerEl = document.querySelectorAll(".answer");
 var startBtn = document.getElementById('start-button')
 var quiz = document.querySelector(".quiz")
+var form = document.querySelector("form")
+var endGame = true;
 // //create endgame function here. Setting it equal to clearInterval(timerInterval) so if user finishes before timer is up, the timer stops.
-// function endGame (){
-// }
+ function endGame() {
+    form.setAttribute("style", "visibility: visible;");
+    //alert ("final score: " + timeLeft );
+    var name = document.querySelector("#fname").value;
+    localStorage.setItem('name', name);
+    localStorage.setItem('score', timeLeft);
+ };
 
 startBtn.addEventListener("click", function(){
     console.log("start button was clicked")
     quiz.setAttribute("style", "visibility: visible;");
+    startTimer();
 });
 
 function startTimer() {
@@ -21,12 +29,13 @@ function startTimer() {
         timeLeft--;
         if (timeLeft <= -1) {
             clearInterval(timerInterval);
+            //endGame ();
             displayMessage ();
+        
         }
     }, 1000);   
 }
-startTimer();
-
+//localStoarg.setItem('score', secondsLeft)
 
 ptagEl.textContent = "The Correct Braces For A JavaScript Array is [ ]";
 answerEl[0].textContent = "True";
@@ -82,7 +91,12 @@ function getLastQuestion() {
     answerEl[1].textContent = "not an answer option"
     answerEl[2].textContent = "False";
     answerEl[3].textContent = "True";
+    if (answerEl[3] == "True") {
+        console.log("quiz is over");
+        endGame ();
+    }
 };
+
 answerEl[2].addEventListener('click', function() {
     console.log('button one was clicked');
     alert("You are correct!");
@@ -151,14 +165,4 @@ answerEl[3].addEventListener("click", function() {
 
 function displayMessage() {
     timerEl.textContent = ('Times Up!');
-    //alert ("final score: " + timeLeft );
-}
-
-startTimer();
-
-// the form to store the users to store info 
-// headTitle.textContent = "The quiz is now over!"
-// ques.textContent = "Your final score was " + secondsLeft;
-// var endMess = document.createElement('form');
-// newItem.innerHTML = "<label> Name:</label><br>\n<input type='text'<br><br>\n<a href= './/highscore.html'> <input type='submit' value='Submit'> </a>";
-// replaceAns.parentNode.replaceChild(endMess, replaceAns);
+};
