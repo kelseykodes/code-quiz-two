@@ -15,6 +15,7 @@ function endGame() {
     console.log("timer stops  immediately")
     //var finalScore = timerEl;
     alert ("final score: " + timeLeft );
+    alert ("Enter your score of " + timeLeft + " in the form below!");
     var name = document.querySelector("#fname").value;
     localStorage.setItem('name', name);
     localStorage.setItem('score', timeLeft);
@@ -29,7 +30,7 @@ startBtn.addEventListener("click", function(){
 
 //the timer itself, will begin counting down from 60 seconds
 function startTimer() {
-    var timerInterval = setInterval(function() {
+    timerInterval = setInterval(function() {
         timeLeft--;
         timerEl.textContent = timeLeft + " seconds remaining";
         if (timeLeft == 0) {
