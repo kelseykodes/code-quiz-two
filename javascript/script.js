@@ -1,5 +1,5 @@
 var userScore = 0;
-var timeLeft = 60;
+var timeLeft = 10;
 var timerEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 var ptagEl = document.getElementById("pTag");
@@ -26,12 +26,12 @@ startBtn.addEventListener("click", function(){
 
 function startTimer() {
     var timerInterval = setInterval(function() {
-        timerEl.textContent = timeLeft + " seconds remaining";
         timeLeft--;
-        if (timeLeft <= -1) {
+        timerEl.textContent = timeLeft + " seconds remaining";
+        if (timeLeft == 0) {
             clearInterval(timerInterval);
+            timerEl.textContent = timeLeft + " time remaining";
             endGame();
-            displayMessage ();
         
         }
     }, 1000);   
