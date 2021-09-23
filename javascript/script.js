@@ -9,7 +9,7 @@ var quiz = document.querySelector(".quiz")
 var form = document.querySelector("form")
 var timerInterval; 
 // //create endgame function here. Setting it equal to clearInterval(timerInterval) so if user finishes before timer is up, the timer stops.
- 
+ //function doesn't clear timer when called
 function endGame() {
     clearInterval(timerInterval);
     console.log("timer stops  immediately")
@@ -98,10 +98,10 @@ function getLastQuestion() {
     answerEl[1].textContent = "not an answer option"
     answerEl[2].textContent = "False";
     answerEl[3].textContent = "True";
-    if (answerEl == "True") {
-        console.log("quiz is over");
-        endGame ();
-    }
+    // if (answerEl == "True") {
+    //     console.log("quiz is over");
+    //     endGame ();
+    // }
 };
 //when user reaches final question, timer should stop
 answerEl[2].addEventListener('click', function() {
