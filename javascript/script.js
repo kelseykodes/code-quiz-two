@@ -1,5 +1,5 @@
 var userScore = 0;
-var timeLeft = 10;
+var timeLeft = 60;
 var timerEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 var ptagEl = document.getElementById("pTag");
@@ -7,23 +7,26 @@ var answerEl = document.querySelectorAll(".answer");
 var startBtn = document.getElementById('start-button')
 var quiz = document.querySelector(".quiz")
 var form = document.querySelector("form")
-var endGame = true;
+//var endGame = true;
 // //create endgame function here. Setting it equal to clearInterval(timerInterval) so if user finishes before timer is up, the timer stops.
  
 function endGame() {
-    form.removeAttribute("style=visibility: hidden");
-    //alert ("finalore: " + timeLeft );
+    //form.removeAttribute("style=visibility: hidden");
+    var finalScore = timerEl;
+    alert ("final score: " + timeLeft );
     var name = document.querySelector("#fname").value;
     localStorage.setItem('name', name);
     localStorage.setItem('score', timeLeft);
  };
 
+ //button will initate quiz and reveal questions and start timer 
 startBtn.addEventListener("click", function(){
     console.log("start button was clicked")
     quiz.setAttribute("style", "visibility: visible;");
     startTimer();
 });
 
+//the timer itself, will begin counting down from 60 seconds
 function startTimer() {
     var timerInterval = setInterval(function() {
         timeLeft--;
@@ -31,8 +34,11 @@ function startTimer() {
         if (timeLeft == 0) {
             clearInterval(timerInterval);
             timerEl.textContent = timeLeft + " time remaining";
+        } 
+        if (timeLeft >= ptagEl.querySelectorAll("pTag")) {
+            clearInterval(timerInterval);
+            console.log("user answered all questions, timer stops")
             endGame();
-        
         }
     }, 1000);   
 }
