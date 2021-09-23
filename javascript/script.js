@@ -80,7 +80,7 @@ answerEl[0].addEventListener('click', function() {
 answerEl[1].addEventListener("click", function() {
     console.log("button two was clicked")
     // option 2 will always be incorrect answer
-    alert("Wrong. Looks like some needs to study!")
+    alert("Wrong. Looks like someone needs to study!")
     getNextQuestion();
 });
 
@@ -92,7 +92,7 @@ function getLastQuestion() {
     answerEl[1].textContent = "not an answer option"
     answerEl[2].textContent = "False";
     answerEl[3].textContent = "True";
-    if (answerEl[3] == "True") {
+    if (answerEl == "True") {
         console.log("quiz is over");
         endGame ();
     }
@@ -107,7 +107,8 @@ answerEl[2].addEventListener('click', function() {
 
 answerEl[3].addEventListener("click", function() {
     console.log("button two was clicked")
-    alert("Wrong. Looks like some needs to study!")
+    alert("Wrong. Looks like someone needs to study!")
+
     // option 2 two will always be incorrect answer
     getLastQuestion();
 });
