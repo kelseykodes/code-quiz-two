@@ -7,12 +7,13 @@ var answerEl = document.querySelectorAll(".answer");
 var startBtn = document.getElementById('start-button')
 var quiz = document.querySelector(".quiz")
 var form = document.querySelector("form")
-//var endGame = true;
+var timerInterval; 
 // //create endgame function here. Setting it equal to clearInterval(timerInterval) so if user finishes before timer is up, the timer stops.
  
 function endGame() {
-    //form.removeAttribute("style=visibility: hidden");
-    var finalScore = timerEl;
+    clearInterval(timerInterval);
+    console.log("timer stops  immediately")
+    //var finalScore = timerEl;
     alert ("final score: " + timeLeft );
     var name = document.querySelector("#fname").value;
     localStorage.setItem('name', name);
@@ -35,11 +36,11 @@ function startTimer() {
             clearInterval(timerInterval);
             timerEl.textContent = timeLeft + " time remaining";
         } 
-        if (timeLeft >= ptagEl.querySelectorAll("pTag")) {
-            clearInterval(timerInterval);
-            console.log("user answered all questions, timer stops")
-            endGame();
-        }
+        // if (timeLeft >= ptagEl.querySelectorAll("pTag")) {
+        //     clearInterval(timerInterval);
+        //     console.log("user answered all questions, timer stops")
+        //     endGame();
+        // }
     }, 1000);   
 }
 //localStoarg.setItem('score', secondsLeft)
@@ -65,15 +66,14 @@ var text= "";
 
 function getNextQuestion() {
     currentQuestionCount++;
-    //need to loop the two other questions here
+    //need to loop the two other questions here but dont know how
     ptagEl.textContent = "Can You Use CSS Inside JavaScript?";
     console.log(ptagEl);
     answerEl[0].textContent = "not an answer option"
     answerEl[1].textContent = "not an answer option"
     answerEl[2].textContent = "Yes";
     answerEl[3].textContent = "No";
-    //answerEl[2].textContent = "click to see last question
-    // for (var i = 0, i < 3) trying loop something here...maybe for in or for each? because I 
+    // for (var i = 0, i < 3) trying loop something here...but failed.
 }
 
 answerEl[0].addEventListener('click', function() {
@@ -103,20 +103,27 @@ function getLastQuestion() {
         endGame ();
     }
 };
-
+//when user reaches final question, timer should stop
 answerEl[2].addEventListener('click', function() {
     console.log('button one was clicked');
     alert("You are correct!");
     // option 1 one will always be correct answer
-    getLastQuestion();
+    if (currentQuestionCount >= 2) {
+        endGame();
+    } else {
+        getLastQuestion();
+    }
 });
-
+//when user reaches final question, timer should stop
 answerEl[3].addEventListener("click", function() {
     console.log("button two was clicked")
     alert("Wrong. Looks like someone needs to study!")
-
     // option 2 two will always be incorrect answer
-    getLastQuestion();
+    if (currentQuestionCount >= 2) {
+        endGame();
+    } else {
+        getLastQuestion();
+    }
 });
 
 
