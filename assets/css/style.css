@@ -32,7 +32,7 @@
 }
 
 
-  .card{
+  .card, .form {
     background: radial-gradient(circle, rgba(108, 209, 170, 0.986) 0%, rgba(63, 72, 206, 0.604) 100%);
     border: 5px solid #ffffff;
     border-radius: 8px;
@@ -52,4 +52,11 @@
       /* display: flex; */
      /* align-self:  center;  */
  /* } */
-
+ /* .form {
+  display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    box-shadow: inset 0px 0px 0px var(--heliotrope), 0 0 25px var(--heliotrope);
+    font-size: 1em;
+ } */

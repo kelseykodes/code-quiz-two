@@ -127,7 +127,7 @@ answerEl[3].addEventListener("click", function() {
     }
 });
 
-
+//  didnt know how to loop with array and change textContent of questions with answers
 //  const quizQuestions = [   
 //     {
 //       prompt:  "The Correct Braces For A JavaScript Array is [ ]",
@@ -164,20 +164,6 @@ answerEl[3].addEventListener("click", function() {
     // }
     
 // alert ("final score: " + userScore + "/" + quizQuestions.length);
-
-
-// function startTimer() {
-//     var timerInterval = setInterval(function() {
-//         timeLeft--;
-//         timerEl.textContent = timeLeft + " seconds remaining";
-
-//         if (timeLeft === 0){
-//             clearInterval(timerInterval);
-//             displayMessage();
-
-//         }
-//     }, 1000);
-// }
 
 function displayMessage() {
     timerEl.textContent = ('Times Up!');
